@@ -1,0 +1,168 @@
+@import 'includes/_variables.scss';
+
+$primary:#4a1fff;
+$black: #202125;
+$dgray: #32373c;
+$lgray: #f9f9f9;
+
+#adminmenuback,
+#adminmenuwrap,
+#adminmenu,
+#wpadminbar {
+    background-color: $black;
+}
+
+#adminmenu {
+    margin-top: 0;
+
+    .menu-top {
+        .wp-menu-image {
+            filter: grayscale(1);
+        }
+
+        &:hover .wp-menu-image {
+            filter: grayscale(1) contrast(5);
+        }
+    }
+
+    .wp-has-current-submenu .wp-submenu .wp-submenu-head,
+    .wp-menu-arrow,
+    .wp-menu-arrow div,
+    li.current a.menu-top,
+    li.wp-has-current-submenu a.wp-has-current-submenu {
+        background: $primary;
+    }
+
+
+    a:focus,
+    a:hover {
+        box-shadow: none;
+    }
+}
+
+
+.wp-admin {
+
+    #wpcontent {
+        .acf {
+            &-field {
+                .select2-selection {
+                    height: auto;
+
+                    &__clear,
+                    &__arrow {
+                        top: 0;
+                        bottom: 0;
+                        right: .5rem;
+                        margin: auto;
+                        line-height: 1;
+                    }
+
+                    &__clear {
+                        font-size: .9rem;
+                        right: 0;
+                    }
+
+                    &__rendered {
+                        line-height: inherit;
+
+                    }
+                }
+
+                .select2-selection__rendered,
+                .acf-input-prepend,
+                .acf-input-append,
+                input[type="text"],
+                input[type="password"],
+                input[type="date"],
+                input[type="datetime"],
+                input[type="datetime-local"],
+                input[type="email"],
+                input[type="month"],
+                input[type="number"],
+                input[type="tel"],
+                input[type="time"],
+                input[type="url"],
+                input[type="week"],
+                textarea,
+                select {
+                    padding: 8px;
+                    // height: auto;
+                    border-color: $dgray;
+                }
+
+                .select2-selection__rendered {
+                    padding-right: 2rem;
+                }
+
+                .wp-editor-area,
+                .acf-gallery {
+                    min-height: 200px;
+                    height: auto !important;
+                }
+
+                .acf-gallery {
+                    min-height: 280px;
+                }
+            }
+
+            &-input-wrap.select {
+                border-color: $dgray;
+            }
+
+            &-groupless {
+                padding: 0;
+
+                > .acf-label {
+                    display: none;
+                }
+
+                > .acf-input > .acf-fields {
+                    border: none;
+                }
+            }
+
+            &-oembed {
+                .canvas-media {
+                    position: relative;
+                    height: 0;
+                    padding-bottom: 56.6%;
+                    overflow: hidden;
+
+                    iframe {
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+
+            &-fc-layout-handle,
+            &-fc-layout-order {
+                font-weight: bold;
+            }
+
+            &-fc-layout-order {
+                height: 1.5rem;
+                width: 1.5rem;
+                background: $primary;
+                color: $white;
+                line-height: 1.5rem;
+                margin-right: .25rem;
+                border-radius: 3rem;
+            }
+
+
+            &-flexible-content .layout:nth-child(even),
+            &-flexible-content .layout:nth-child(even) .acf-accordion,
+            &-table .acf-row:nth-child(even) .acf-field,
+            &-repeater .acf-row:nth-child(even) .acf-fields {
+                background-color: $lgray;
+            }
+        }
+    }
+}

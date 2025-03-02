@@ -1,0 +1,62 @@
+.fifty_fifty{
+
+    padding-top: 3rem;
+    padding-bottom: 3rem; 
+
+    &.bg-gray{
+        background-color: $xxlgray;
+    }
+
+    &__content{
+        flex: 1;
+    }
+    
+    &__img{
+        position: relative;
+        padding-bottom: 80%;
+        margin-bottom: 1.5rem;
+        height: 100%;
+        border-radius: 7px;
+        overflow: hidden;
+    }
+
+    &.small-image{
+        .fifty_fifty__img{
+            text-align: center;
+            padding-bottom: 0;
+            height: auto;
+            img{
+                width: 23rem;
+                max-width: 100%;
+            }
+        }
+    }
+
+
+    @media (min-width: $laptop){
+
+        &__wrap{
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &__col{
+            flex: 1;
+            max-width: calc(50% - 2rem);
+        }
+
+        &__img{
+            margin-bottom: 0;
+        }
+
+        &.reverse{
+            .fifty_fifty__wrap{
+                flex-direction: row;
+            }
+        }
+
+    }
+
+   
+}

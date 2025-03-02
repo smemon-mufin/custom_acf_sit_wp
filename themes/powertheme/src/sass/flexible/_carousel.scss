@@ -1,0 +1,157 @@
+
+.carousel-sect{   
+    background-color: $primary;
+    padding: 3rem 0;
+    z-index: 1;
+
+    .flickity-button{
+      display: none;
+    }
+
+    &-testimonial{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    &__bg-img{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    h2{
+        text-align: center;
+        margin-bottom: 3rem;
+        color: $white;
+    }
+
+    &-cell__inner{
+      flex-direction: column;
+      background-color: #f2f2f2;
+      padding: 1.5rem;
+      margin: 0 1.5rem;
+      border-radius: 8px;
+    }
+
+    &-cell{
+      display: flex;
+      align-items: stretch;
+      min-height: 100%;
+      &:not(.is-selected){
+          opacity: 0.5;
+          margin-top: 0;
+      }
+    }
+
+    &__logo{
+        width: 140px;
+        margin-bottom: 2rem;
+        border-radius: 8px;
+        height: 70px;
+        background-color: #fff;
+        padding: 0.5rem;
+
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+    }
+
+    &__content{
+        margin-bottom: 2rem;
+    }
+
+    .custom-nav {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .custom-dots{
+          position: relative;
+
+          ol{
+            display: flex;
+            position: static;
+            align-items: center;
+            list-style: none;
+
+            li{
+              position: relative;
+
+              &::before{
+                display: none;
+              }
+            }
+          }
+        }
+      
+        button {
+          background-color: transparent;
+          border: 0;
+          cursor: pointer;
+
+          .svg-icon{
+            width: 44px;
+            height: 44px;
+
+            svg g * {
+              stroke: #01183F;
+            }
+          }
+
+          &.next-button{
+            transform: rotate(180deg);
+          }
+
+          &:hover{
+            opacity: .8;
+          }
+        }
+      }
+      
+      .custom-dots {
+        text-align: center;
+        padding: 0 1rem;
+      
+        .dot {
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          background-color: #ccc;
+          border-radius: 50%;
+          margin: 5px;
+          cursor: pointer;
+      
+          &.is-selected {
+            background-color: $white;
+          }
+        }
+      }
+
+      .flickity-viewport{
+        overflow: visible;
+      }
+
+      @media (min-width: $laptop){
+        &-cell {
+            width: calc(40% - 40px);
+
+            &:not(.is-selected){
+                margin-top: 3rem;
+            }
+        }
+      }
+      @media (min-width: 1920px){
+        &-cell {
+            width: calc(25% - 40px);
+        }
+      }
+
+
+  
+}

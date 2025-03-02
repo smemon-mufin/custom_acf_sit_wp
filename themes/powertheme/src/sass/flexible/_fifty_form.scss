@@ -1,0 +1,66 @@
+.fifty_form{
+    background-color: $xxlgray;
+    color: $dark;
+
+    &__column{
+        margin-bottom: 1.5rem;
+    }
+
+    .gform_button {
+        color: #000;
+    }
+    
+
+    p{
+        line-height: 1.5;
+    }
+    textarea{
+        height: 150px;
+    }
+    ul{
+        margin-left: 0;
+        li{
+            padding-left: 0;
+
+            &:before{
+                display: none;
+                margin-left: 0;
+            }
+        }
+    }
+    .btn{
+        margin-top: .5rem;
+    }
+
+    &__form{
+        background-color: $white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 0 21px 0px rgb(0 0 0 / 8%);
+
+        .gform_required_legend{
+            display: none;
+        }
+
+        label{
+            font-weight: 600;
+            color: $black !important;
+            font-size: 1rem !important;
+        }
+    }
+
+    @media (min-width: $laptop){
+        &__wrap{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &__column{
+            flex: 1;
+
+            &:first-child{
+                padding-right: 3rem;
+            }
+        }
+    }
+} 

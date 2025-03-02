@@ -1,0 +1,55 @@
+<?php 
+$solutions_categories = get_terms('case_study_solutions');
+$spend_categories = get_terms('case_study_spend_areas');
+$industry_categories = get_terms('case_study_industry');
+?>
+<section class="resources-filter-wrapper">
+<div class="container">
+	<div class="resources-filters">
+		<div class="filter-row">
+			<div class="filter-row__col">
+				<!-- Filter for Solutions -->
+		     	<div class="filter-dd solutions-choice">
+		            <div class="filter-dd__trigger">
+		                <span>Solutions</span><?php echo getSVG('chevron'); ?>
+		            </div>
+		            <div class="filter-dd__list">
+		            	<?php foreach ($solutions_categories as $cat) { ?>
+		            		<span data-post-name="<?php echo $cat->slug; ?>"><?php echo $cat->name; ?></span>
+						<?php } ?>		            		
+		            </div>
+		        </div>
+				<!-- Filter for Spend Areas -->
+     			<div class="filter-dd spend-areas-choice">
+		            <div class="filter-dd__trigger">
+		                 <span>Spend Areas</span><?php echo getSVG('chevron'); ?>
+		            </div>
+		            <div class="filter-dd__list">
+			          <?php foreach ($spend_categories as $cat) { ?>
+		            		<span data-post-name="<?php echo $cat->slug; ?>"><?php echo $cat->name; ?></span>
+						<?php } ?>	
+		            </div>
+		        </div>				
+				<!-- Filter for Industries -->
+     			<div class="filter-dd industries-choice">
+		            <div class="filter-dd__trigger">
+		                <span>Industries</span><?php echo getSVG('chevron'); ?>
+		            </div>
+		            <div class="filter-dd__list">
+			          <?php foreach ($industry_categories as $cat) { ?>
+			          		<span data-post-name="<?php echo $cat->slug; ?>"><?php echo $cat->name; ?></span>
+						<?php } ?>	
+		            </div>
+		        </div>							
+			</div> <!-- /.filter-row__col -->
+			<!-- Filter Button -->
+			<div class="filter-row__col">
+				<div class="filter-btns">
+					<button class="btn btn--grey" id="filter-case-studies">Filter</button>
+					<button class="btn btn--underline" id="clear-button">Clear</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</section>

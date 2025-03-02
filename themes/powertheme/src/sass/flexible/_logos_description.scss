@@ -1,0 +1,46 @@
+.logos_description{
+
+
+    &__content{
+        text-align: center;
+        margin-bottom: 3rem;
+        
+        p{
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__col{
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+
+    &__logo{
+        transform: scale(1);
+        transition: .5s all;
+        height: 80px;
+
+        img{
+            width: auto;
+            height: 5rem;
+        }
+        
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+
+
+    @media (min-width: $laptop){
+        &__wrap{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        &__col{
+            width: calc(33% - 6rem);
+            margin: 0 3rem;
+            margin-bottom: 3rem;
+        }
+    }
+}

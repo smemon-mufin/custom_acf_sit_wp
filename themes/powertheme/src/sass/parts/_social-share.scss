@@ -1,0 +1,60 @@
+.sharelinks {
+    display: inline-block;
+    position: relative;
+
+    .svg-icon {
+        vertical-align: middle;
+    }
+
+    &__label {
+        display: inline-block;
+        cursor: pointer;
+
+        .svg-icon {
+            margin: 0 .25rem;
+            height: 1.25rem;
+            width: 1.25rem;
+        }
+    }
+
+    &:hover &__list ul {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        z-index: 3;
+    }
+
+    &__list {
+        margin-top: .5rem;
+
+        ul {
+            display: none;
+            padding: .5rem .75rem;
+            margin: 0;
+            background: $white;
+            box-shadow: 0 .5rem 1rem -.25rem rgba($black, .2);
+
+            li {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                align-items: center;
+
+                &:before {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__list li {
+        &:not(:first-child) {
+            margin-left: .75em;
+        }
+    }
+
+    &__link {
+        display: block;
+        text-decoration: none;
+    }
+}

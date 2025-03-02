@@ -1,0 +1,161 @@
+.gfooter {
+    color: $black;
+    background: linear-gradient(180deg, rgb(255, 255, 255) 40%, rgb(194, 254, 255) 150%);
+
+
+    &__content, &__bottom {
+        padding: 2rem 1.5rem;
+        overflow: hidden;
+    }
+
+    &__bottom {
+        padding: 1rem 1.5rem;
+        font-size: .9rem;
+
+        .container {
+            border-top: 1px solid $light;
+            padding-top: 2rem;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__logo{
+        margin-bottom: 1rem;
+        text-align: center;
+
+        .site-logo{
+            width: 117px;
+            margin-bottom: .5rem;
+        }
+        p{
+            font-size: 14px;
+        }
+    }
+    &__copy{
+        font-size: 14px;
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center;
+
+        > *{
+            margin-bottom: 1rem;
+        }
+    }
+    &__social{
+
+        margin-bottom: 1.5rem;
+        text-align: center;
+
+        .social-links {
+            ul {
+                margin-top: 0;
+                justify-content: center;
+
+                .svg-icon{
+                    path{
+                        fill: $black;
+                    }
+                    &:hover{
+                        opacity: .5;
+                        path{
+                            fill: $black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .menu{
+
+        &--foot{
+            font-size: 14px;
+
+            &:not(:last-child){
+                margin-bottom: 1.5rem;
+            }
+        }
+        &--heading{
+            color: $secondary;
+            margin-bottom: .5rem;
+            display: block;
+            text-align: center;
+        }
+        li{
+            margin-bottom: .5rem;
+            text-align: center;
+
+            a{
+                text-decoration: none;
+                font-weight: $bold;
+                color: $dark; 
+            }
+        }
+    }
+
+    @media (min-width: $laptop) {
+
+        .col--left{
+            max-width: 25%;
+        }
+
+        &{
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+        }
+
+        &__bottom {
+            padding: 1rem 3rem;
+        }
+
+        &-menus{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__copy{
+            flex-direction: row;
+
+            > *{
+                margin-left: 1rem;
+
+                &:first-child{
+                    margin-left: 0;
+                }
+            }
+        }
+        &__logo{
+            text-align: left;
+        }
+
+        .menu{
+            &--foot{
+                margin-right: 3rem;
+                max-width: 180px;
+                width: 33%;
+
+                li{
+                    margin-bottom: 1rem;
+                    text-align: left;
+                }
+
+                // &:last-child{
+                //     margin-left: auto;
+                // }
+
+               
+            }
+
+            &--heading{
+                margin-bottom: 1.5rem;
+                text-align: left;
+            }
+        }
+
+        .container {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+}

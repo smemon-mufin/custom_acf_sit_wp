@@ -1,0 +1,61 @@
+.accordion {
+    border-top: 1px solid $lgray;
+
+    &__trigger {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0;
+        cursor: pointer;
+        font-size: $heading_h4__mobile;
+        width: 100%;
+        padding: 1rem 0;
+        text-align: left;
+        background: transparent;
+        border: none;
+        font-weight: $bold;
+
+        .svg-icon {
+            margin-left: auto;
+            flex: none;
+            transform: rotate(90deg);
+        }
+    }
+
+    &__label {
+        margin-right: 1rem;
+    }
+
+    &__trigger.active ~ &__content {
+        display: block;
+    }
+
+    &__content {
+        display: none;
+        overflow: hidden;
+        margin-bottom: 1rem;
+    }
+
+    &.active {
+        background-color: $xxlgray;
+        border-top: 0;
+        border-radius: 7px; 
+        .svg-icon {
+            transform: rotate(-90deg);
+        }
+    }
+    &.active + div{
+        border-top: 0 !important;
+    }
+   
+
+    @media (min-width: $laptop) {
+        &__trigger {
+            padding: 1.5rem 0;
+        }
+
+        &__content {
+            margin-bottom: 1.5rem;
+        }
+
+    }
+}

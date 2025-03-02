@@ -1,0 +1,154 @@
+.service_button_tabs{
+
+    &__intro{
+        margin-bottom: 1.5rem;
+
+        .bordered-cta{
+            margin-top: .5rem;
+        }
+    }
+
+    &__tabs{
+
+        .button-tab{
+            font-weight: $bold;
+            border: 1px solid #414042;
+            border-radius: 7px;
+            padding: 1.25em;
+            display: block;
+            margin-bottom: .9rem;
+            transition: .4s all;
+
+            &.active{
+                background-color: $teal;
+                border-color: $teal;
+                color: $white;
+            }
+
+            &:not(.active):hover{
+                background-color: rgba($teal, 10%);
+                border-color: rgba($teal, 10%);
+            }
+        }
+    }
+
+    .dropdown {
+      
+        &-toggle {
+          cursor: pointer;
+          border-radius: 8px;
+          padding: 1rem;
+          position: relative;
+          border: 1px solid $dark;
+        }
+
+    }
+
+        
+    .img-content{
+        position: relative;
+        z-index: 1;
+        margin-bottom: 1.5rem;
+        min-height: 30rem;
+        border-radius: 5px;
+        overflow: hidden;
+        padding: 1.5rem;
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+
+        &-img{
+
+            .overlay{
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba($black, 50%);
+                z-index: 1;
+            }
+        }
+
+    
+        &-content{
+            color: $white;
+            position: relative;
+            z-index: 2;
+
+            h3, p{
+                margin-bottom: .5rem;
+            }
+
+            a{
+                color: $white;
+                display: inline-block;
+                border: 0;
+                text-decoration: none;
+                transition: .2s all;
+                
+                .svg-icon {
+                    margin-left: 1rem;
+                    width: 0.8rem;
+                    height: 0.8rem;
+
+                    path{
+                        fill: $white;
+                        transition: .2s all;
+                    }
+                }
+
+                &:hover{
+                    color: $brown;
+
+                    .svg-icon{
+                        path{
+                            fill: $brown;
+                        }
+                    }
+                }
+            }
+        }
+
+        
+
+    
+    }
+
+
+    @media (min-width: $laptop){
+        &__wrap{
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: stretch;
+        }
+        &__col{
+            width: calc(50% - 1rem);
+        }
+        &__img-content{
+            padding-right: 4rem;
+            flex: 1;
+            height: 100%;
+            width: 90%;
+        }
+        &__tabs{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding-top: 1rem;
+            
+            .button-tab{
+                width: calc(50% - .5rem);
+            }
+        }
+        .img-content{
+            width: 95%;
+            
+
+
+        }
+        
+    }
+    
+}

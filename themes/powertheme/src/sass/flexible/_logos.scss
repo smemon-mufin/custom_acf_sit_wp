@@ -1,0 +1,58 @@
+.logos{
+
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0.91%, rgba(194, 254, 255, 0.6) 99.79%);
+
+    &__wrap{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    &__col{
+        width: calc(50% - 1rem);
+        margin-bottom: 1.5rem;
+        text-align: center;
+
+        &:first-child{
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    &__logo{
+        position: relative;
+
+        img{
+            object-fit: contain;
+            transition: .2s all;
+            height: 70px;
+
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+        
+    }
+
+    @media (min-width: $laptop) {
+
+        &{
+            padding-bottom: 3rem;
+        }
+
+        &__wrap{
+            flex-wrap: nowrap;
+        }
+        &__col{
+            // width: 150px;
+            padding: 0 1rem;
+
+            &:first-child{
+                text-align: left;
+                padding: 0;
+                width: 24%;
+            }
+        }
+    }
+}

@@ -1,0 +1,138 @@
+.resources-filter-wrapper {
+	padding-top: 2.5rem;
+	padding-bottom: 1.5rem;
+	overflow: visible;
+	position: sticky;
+	top: 3.75rem;
+	display: block;
+	background-color: $white;
+	z-index: 3;
+/*	border-bottom: 1px solid #e5e5e5;*/
+	margin-bottom: 2rem;
+
+	.resources-filters {
+		.filter-row {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: space-between;
+
+			&__col {
+				display: flex;
+				justify-content: space-between;
+				flex-wrap: wrap;
+				align-items: center;
+				width: 100%;
+			}
+
+			.filter-dd {
+				border: 1px solid $black;
+				border-radius: 5px;
+				position: relative;
+				width: 100%;
+				margin-bottom: 1rem;
+
+				&__trigger {
+					position: relative;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					cursor: pointer;
+					padding: .5em;
+
+					.svg-icon {
+						transition: .2s ease all;
+						width: .75rem;
+						height: .75rem;
+
+						&--chevron {
+							transform: rotate(90deg);
+						}
+
+					}
+
+					&.active {
+						.svg-icon {
+							&--chevron {
+								transform: rotate(-90deg);
+							}
+
+						}
+
+					}
+
+				}
+
+				&__list {
+					display: none;
+					z-index: 999;
+					padding: 1em 2em 1.5em;
+					background-color: $white;
+					border-radius: 5px;
+					border: 1px solid $black;
+					border-top-left-radius: 0;
+					border-top-right-radius: 0;
+					left: 0rem;
+					position: absolute;
+					flex-direction: column;
+					margin-top: .5rem;
+
+					span {
+						display: block;
+						width: 100%;
+						cursor: pointer;
+					}
+
+					&.active {
+						display: flex;
+						flex-direction: column;
+					}
+
+				}
+
+			}
+
+			.filter-btns {
+				display: flex;
+				align-items: center;
+
+				.btn {
+					margin-top: 0;
+				}
+
+			}
+
+		}
+
+	}
+
+	@media (min-width:$laptop) {
+		top: 5.75rem;
+
+		.resources-filters {
+			.filter-row {
+				margin: 0 -2%;
+
+				&__col {
+					margin: 0 2%;
+					width: 20%;
+
+					&:first-child {
+						width: 72%;
+					}
+
+				}
+
+				.filter-dd {
+					width: 23%;
+					margin: 0 1%;
+					flex: 1;
+				}
+
+			}
+
+		}
+
+	}
+
+}

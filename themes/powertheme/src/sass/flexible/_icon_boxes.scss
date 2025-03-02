@@ -1,0 +1,47 @@
+.icon_boxes{
+    text-align: center;
+
+    &__box{
+        background-color: $teal;
+        color: $white;
+        padding: 1.5rem;
+        border-radius: 7px;
+        overflow: hidden;
+
+        &:not(:last-child){
+            margin-bottom: 1.5rem;
+        }
+
+        .svg-icon{
+            width: 2.25rem;
+            height: 2.25rem;
+            margin: auto;
+        }
+
+        h4{
+            margin-top: 1.25rem;
+        }
+    }
+
+    h2{
+        margin-bottom: 2.5rem;
+    }
+
+
+    @media (min-width: $laptop){
+        h2{
+            font-size: 2.25rem;
+        }
+
+        &__wrap{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        &__box{
+            width: calc(25% - 1.5rem);
+            margin-bottom: 2rem !important;
+        }
+    }
+}

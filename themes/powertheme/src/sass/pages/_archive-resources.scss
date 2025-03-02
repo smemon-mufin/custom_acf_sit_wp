@@ -1,0 +1,67 @@
+.resources-template {
+    .simple -hero {
+        text-align: center;
+        color: $white;
+        background-color: $teal;
+        margin-top: 0 !important;
+    }
+
+    .categories-btn__wrap {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        margin-top: 3rem;
+
+        ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            justify-content: center;
+
+            li {
+                margin-top: 0;
+
+                a {
+                    text-decoration: none;
+                }
+
+                &:before {
+                    display: none;
+                }
+
+            }
+
+        }
+
+    }
+
+    .archive-content {
+        border-top: 0 !important;
+
+            
+        .resource-posts {
+            justify-content: initial !important;
+            .resource-card {
+                margin-bottom: 3rem;
+                width: 100%;
+            }
+        }
+
+    }
+
+
+    @media (min-width:$laptop) {
+        .resource-posts {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 -2%;
+
+            .resource-card {
+                width: 29% !important;
+                margin: 2%;
+            }
+
+        }
+
+    }
+}
+

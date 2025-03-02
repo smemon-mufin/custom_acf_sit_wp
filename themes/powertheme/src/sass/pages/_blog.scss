@@ -1,0 +1,25 @@
+.blog {
+
+
+  
+
+    .resource-card {
+        margin: 1.5rem;
+        width: 100%;
+        margin-bottom: 3rem;
+    }
+
+    @media (min-width: $laptop) {  
+        &-posts {
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            display: flex;
+            margin: 0 -1rem;
+            flex-wrap: wrap;
+        }
+        .resource-card {
+            width: calc(33.33% - 3rem);
+            // flex: 1;
+        }
+    }
+}

@@ -1,0 +1,353 @@
+@mixin clearfix() {
+    &:after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+}
+
+@mixin box-shadow($type: undefined) {
+
+    @if $type==undefined {
+        box-shadow: 0 1rem .9rem -4px rgba($black, .05),
+            0 .35rem .5rem -2px rgba($black, .1),
+            0 2px 1rem -.25rem rgba($black, .08);
+        margin-bottom: 2em;
+    }
+
+    @else if $type=='reset' {
+        box-shadow: none;
+    }
+}
+
+@media (max-width: ($laptop - 1)) {
+    .full-mobile {
+        width: calc(100% + 3rem);
+        margin-left: -1.5rem;
+    }
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    margin: -.5rem;
+
+    .col {
+        margin: .5rem;
+        flex: 1 auto;
+    }
+
+    @media (min-width: $laptop) {
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        &--reverse {
+            flex-direction: row-reverse;
+        }
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+.desk-only {
+    @media (max-width: ($laptop - 1)) {
+        display: none !important;
+    }
+}
+
+.mob-only {
+    @media (min-width: $laptop) {
+        display: none !important;
+    }
+}
+
+.accent {
+    color: $link_color !important;
+
+    &--red{
+        color: $red;
+    }
+    &--teal{
+        color: $teal !important;
+    }
+}
+
+%input {
+    display: inline-block;
+    appearance: none;
+    padding: .75rem;
+    border: $input_border_width solid $input_inactive;
+    background: $input_background;
+    border-radius: $input_border_radius;
+    font: inherit;
+    font-size: .9rem;
+    line-height: 1.25;
+    width: 100%;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &.filled {
+        border-color: $input_filled;
+    }
+
+    &:focus {
+        border-color: $input_active;
+    }
+}
+
+%button {
+    background: transparent;
+    border: $input_border_width solid transparent;
+    border-radius: $input_border_radius;
+    color: $black;
+    cursor: pointer;
+    display: inline-block;
+    font: inherit;
+    font-size: .9rem;
+    font-weight: $bold;
+    padding: .75rem 1rem;
+    margin: 0;
+    text-decoration: none;
+    line-height: 1.25;
+    text-align: center;
+    transition: .16s ease;
+    width: 100%;
+    margin-right: 1rem;
+
+    .svg-icon {
+        display: inline-block;
+        margin: 0 .5rem;
+        font-size: .8rem;
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    p + & {
+        margin-top: 1rem;
+    }
+
+    + #{&} {
+        margin-top: .75rem;
+    }
+
+    @media (min-width: $mobile) {
+        width: auto;
+
+        p + & {
+            margin-top: 1.5rem;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+%customLists {
+
+    ul,
+    ol {
+        margin-left: 1rem;
+        font-size: inherit;
+
+        li {
+            padding-left: 0.5rem;
+            list-style: none;
+            position: relative;
+            box-sizing: border-box;
+
+            &:before {
+                content: "";
+                display: block;
+                box-sizing: border-box;
+                position: absolute;
+                right: 100%;
+                color: $info;
+                white-space: nowrap;
+            }
+        }
+
+        @media (min-width: $tablet) {
+            margin-left: 1.25rem;
+        }
+    }
+
+    ol {
+        counter-reset: ol-counter;
+
+        li {
+
+            &:before {
+                content: counter(ol-counter);
+                counter-increment: ol-counter;
+                text-align: right;
+                font-weight: bold;
+                right: calc(100% + .5rem);
+            }
+        }
+    }
+
+    ul {
+        li {
+            &:before {
+                top: .5rem;
+                bottom: 0px;
+                margin-right: 0.5rem;
+                height: 0;
+                width: 0;
+                border-radius: 50%;
+                border: 3px solid;
+            }
+        }
+    }
+
+    .checklist {
+        list-style: none;
+
+        li:before {
+            display: none;
+        }
+
+        .svg-icon {
+            position: absolute;
+            top: .3rem;
+            left: -1.25rem;
+            vertical-align: text-top;
+            height: .9rem;
+            width: .9rem;
+
+            svg {
+                fill: $info;
+            }
+        }
+    }
+}
+
+.alignright,
+.alignleft,
+.aligncenter,
+.wp-caption {
+    margin: 1.5rem 2rem;
+    width: auto !important;
+}
+
+.alignright, .alignright img {
+    float: right;
+    margin-right: 0;
+}
+
+.alignleft {
+    float: left;
+    margin-left: 0;
+}
+
+.aligncenter,
+.aligncenter img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.margin-top-desk {
+    @media only screen and (min-width:$laptop) {
+        margin-top: 3rem;
+    }
+}
+
+.margin-bottom-desk {
+    @media only screen and (min-width:$laptop) {
+        margin-bottom: 3rem;
+    }
+}
+
+.margin-top-mob {
+    @media only screen and (max-width: ($laptop - 1)) {
+        margin-top: 1.5rem;
+    }
+}
+
+.margin-bottom-mob {
+    @media only screen and (max-width: ($laptop - 1)) {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.nopad-top {
+    padding-top: 0;
+}
+
+.nopad-bottom {
+    padding-bottom: 0;
+}
+
+.nopad-top-mob {
+    @media only screen and (max-width: ($laptop - 1)) {
+        padding-top: 0;
+    }
+}
+
+.nopad-bottom-mob {
+    @media only screen and (max-width: ($laptop - 1)) {
+        padding-bottom: 0;
+    }
+}
+
+.nopad-top-desk {
+    @media only screen and (min-width:$laptop) {
+        padding-top: 0rem;
+    }
+}
+
+.nopad-bottom-desk {
+    @media only screen and (min-width:$laptop) {
+        padding-bottom: 0rem;
+    }
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 1.5rem;
+  
+    &-toggle {
+      cursor: pointer;
+      border-radius: 8px;
+      padding: 1rem;
+      position: relative;
+    }
+  
+    &-menu {
+      z-index: 2;
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      padding: 10px;
+      width: 100%;
+  
+      &-item {
+        padding: 5px;
+        cursor: pointer;
+  
+        &:hover {
+          background-color: #ddd;
+        }
+      }
+    }
+
+    .svg-icon{
+        position: absolute;
+        top: 20px;
+        right: 1rem;
+        transform: rotate(90deg);
+    }
+  }

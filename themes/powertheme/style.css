@@ -1,0 +1,38 @@
+/*
+Theme Name: 	Power Theme
+Theme URI: 		https://www.powerdigitalmarketing.com
+Description: 	Power Digital Markieting WordPress Skeleton Theme
+Version: 		2.0
+Author: 		Power Digital Marketing
+Author URI: 	https://www.powerdigitalmarketing.com
+*/
+
+
+.menu--main .menu-item__submenu li {
+        color: #000;
+}
+
+.menu--main .menu-item__submenu li svg * {
+        color: #fff;
+}
+
+.global, .menu, .menu--main {
+    margin-left: 50px !important;
+    padding: 10px !important;
+}
+
+.pid-3913 a.bordered-cta {
+    color: #2fcfd3;
+}
+
+.pid-3913 .featured-posts, .spend_areas-utilities-2 .featured-posts {
+    background-color: #00122E;
+}
+
+@media (max-width: 959px){
+    .menu .menu-item__submenu{
+        display: block;
+    }
+}
+
+

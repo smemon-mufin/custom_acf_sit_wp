@@ -1,0 +1,96 @@
+.jumplink_galleries{
+    overflow: visible;
+
+
+
+    &__links{
+        position: sticky;
+        top: 70px;
+        background-color: $white;
+        z-index: 2;
+        padding: 1.5rem 0;
+        box-shadow: 0 0 0 #000;
+        a{ 
+            display: block;
+            border-left: 5px solid $xlgray;
+            padding: .75rem 1.25rem;
+            text-decoration: none;
+            color: $dark;
+
+            &.active{
+                border-left-color: $teal;
+            }
+            &:hover{
+                border-left-color: rgba($teal, 50%);
+            }
+        }
+        .dropdown{
+            margin-bottom: 0;
+            margin-top: 1rem;
+            box-shadow: 0 0 16px 0px rgb(0 0 0 / 13%);
+        }
+       &-sticky{
+        position: sticky;
+        top: 9rem;
+       }
+    }
+
+    &__galleries{
+
+        ul{
+            padding: 2rem 0;
+            list-style: none;
+            margin-left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            li{
+                padding-left: 0;
+                width: calc(50% - 2rem);
+                margin-bottom: 1.5rem;
+
+                &::before{
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @media (min-width: $laptop) {
+        h3{
+            margin-bottom: 1.5rem;
+        }
+        &__wrap{
+            display: flex;
+            justify-content: space-between;
+        }
+        &__links{
+           position: static;
+           flex: 1;
+           padding: 0;
+        }
+        &__galleries{
+            width: 75%;
+            padding-left: 3rem;
+            ul{
+                margin-bottom: 0;
+                padding: 0;
+
+                li{
+                    width: calc(20% - 3rem);
+                    margin: 0 1.5rem 1.5rem;
+                }
+            }
+
+            &-item{
+                margin-bottom: 3rem;
+                border-bottom: 1px solid $xlgray;
+            }
+        }
+        .blog-posts{
+            width: calc(70% - 3rem);
+        }
+    }
+}

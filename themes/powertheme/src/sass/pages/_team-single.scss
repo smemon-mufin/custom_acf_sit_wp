@@ -1,0 +1,71 @@
+.single-team{
+
+    .page-content{
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .bioinfo{
+        display: flex;
+        align-items: center;
+        margin-top: .5rem;
+        font-size: .85rem;
+
+        a{
+            padding-left: .5rem;
+            text-decoration: none;
+            color: $teal;
+        }
+
+        .svg-icon{
+            margin-right: 1rem;
+            path{
+                fill: $teal;
+            }
+        }
+    }
+
+    &-thumb{
+        overflow: hidden; 
+        border-radius: 6px;
+        margin-bottom: 1rem;
+        img{
+            width: 100%;
+        }
+    }
+    
+    &-role{
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-top: .5rem;
+        margin-bottom: 1rem;
+        display: block;
+        font-size: 12px;
+    }
+    
+    &-fifty-col{
+       &:first-child{
+            margin-bottom: 1.5rem;
+       }
+    }
+
+    span.h4{
+        color:  $teal;
+    }
+
+    @media (min-width: $laptop){
+        &-fifty{
+            display: flex;
+        }
+        &-fifty-col{
+            &:first-child{
+                width: 35%;
+            }
+            &:last-child{
+                flex: 1;
+                padding-left: 6rem;
+                padding-top: 60px
+           }
+         }
+    }
+}

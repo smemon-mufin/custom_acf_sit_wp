@@ -1,0 +1,310 @@
+.menu-burger {
+    color: $white;
+    appearance: none;
+    display: inline-block;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    margin: -5px;
+    overflow: hidden;
+    z-index: 100;
+    font: inherit;
+    font-size: .9em;
+    padding: 0;
+    margin: 0 -5px 0 .5em;
+    flex: none;
+    width: auto;
+
+    &__text {
+        margin: 5px;
+        vertical-align: middle;
+    }
+
+    &__icon {
+        display: inline-block;
+        width: 28px;
+        height: 22px;
+        position: relative;
+        vertical-align: middle;
+        margin: 5px;
+
+        span {
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            width: 100%;
+            background: $light;
+            margin: auto;
+            transition: background .16s ease, width .16s ease, transform .16s ease;
+
+            &:before, &:after {
+                @extend span;
+                content: "";
+            }
+
+            &:before {
+                margin-top: -9px;
+            }
+
+            &:after {
+                margin-bottom: -9px;
+            }
+        }
+    }
+
+    &:hover {
+        .menu-burger__icon span {
+            width: 100%;
+        }
+    }
+
+    &.active {
+        .menu-burger__icon span {
+            width: 100%;
+            transform: rotate(-45deg);
+            margin: auto;
+
+            &:before {
+                transform: rotate(90deg);
+                margin: auto;
+            }
+
+            &:after {
+                opacity: 0;
+            }
+
+        }
+
+    }
+
+    @media(min-width:$laptop) {
+        display: none;
+    }
+}
+
+.menu {
+
+    .mobile-arrow {
+        display: block;
+        background: transparent;
+        border-color: transparent;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 3.5rem;
+        width: 3.5rem;
+        color: inherit;
+
+        .svg-icon {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+            transform: rotate(90deg);
+            transform-origin: center;
+        }
+
+        @media (min-width: $laptop) {
+            height: 2.5rem;
+            width: 2.5rem;
+            top: 8px;
+        }
+    }
+
+    .menu-item {
+        display: block;
+        position: relative;
+
+        &__submenu {
+            display: none;
+        }
+
+        &__link {
+            display: block;
+            text-decoration: none;
+            padding: 1rem;
+            font-size: 1rem;
+            font-weight: $semibold;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        &__dropdown {
+
+            svg * {
+                fill: #fff;
+            }
+
+            > .menu-item__link {
+                padding-right: 3.5rem;
+            }
+
+            &.active {
+
+                > .mobile-arrow {
+                    transform: rotate(-180deg);
+                }
+
+                > .menu-item__submenu {
+                    display: block;
+                }
+            }
+        }
+
+
+        @media (min-width: $laptop) {
+
+            &__link {
+                padding: 0;
+            }
+
+            &__dropdown {
+                .menu-item__link {
+                    padding-right: 2.5rem;
+                }
+            }
+        }
+    }
+}
+
+.menu--main {
+    padding: inherit;
+    background: $primary;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    left: -100%;
+    margin: auto;
+    z-index: 99;
+    transition: left .15s ease;
+    margin-top: 3.5rem;
+
+     {
+        background: $xxlgray;
+    }
+
+    .menu-item__submenu li {
+        color: $black;
+    }
+
+    .menu-item__submenu li svg * {
+        color: $white;
+    }
+
+
+    &.active {
+        left: 0;
+    }
+
+    @media (min-width: $laptop) {
+        position: relative;
+        top: initial;
+        left: initial;
+        right: initial;
+        bottom: initial;
+        margin: 0;
+
+        > ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-arrow {
+            height: 1.5rem;
+            width: 1rem;
+
+            .svg-icon {
+                height: .75rem;
+                width: .75rem;
+            }
+        }
+
+        .menu-item {
+            margin-right: 2rem;
+
+            &:hover{
+
+                ul{
+                    display: block;
+                }
+            }
+
+
+            &__dropdown {
+                .menu-item__link {
+                    padding-top: .5rem;
+                    padding-bottom: .5rem;
+                }
+                > .menu-item__link {
+                    padding-top: .5rem;
+                    padding-bottom: .5rem;
+                    padding-right: 1.5rem;
+                }
+            }
+
+            &__submenu {
+                color: $black;
+                background: $white;
+                box-shadow: 0 .25rem .5rem rgba($black, .1);
+                border: 1px solid $xlgray;
+                position: absolute;
+                top: 100%;
+                // margin-top: 1rem;
+                padding: 1rem;
+                min-width: 20rem;
+                transform: translate(-1rem);
+                border-radius: .5rem;
+                left: 0;
+
+              
+               
+            }
+
+        }
+    }
+}
+
+.menu--foot {
+
+    .menu-item__link {
+        padding: .25rem 0;
+    }
+
+    .mobile-arrow {
+        height: 2rem;
+        width: 2rem;
+
+        path {
+            fill: currentColor;
+        }
+    }
+
+    @media (min-width: $laptop) {
+        .mobile-arrow {
+            display: none;
+        }
+
+        .menu-item__submenu {
+            display: block;
+        }
+    }
+}
+
+#menu-main-menu{
+
+    @media (max-width: $laptop - 1) { 
+
+        height: 400px;
+        overflow: scroll;
+    }
+
+}

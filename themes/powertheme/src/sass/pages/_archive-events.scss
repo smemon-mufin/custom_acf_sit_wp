@@ -1,0 +1,56 @@
+.archive,
+.tax-event_categories{
+  
+
+    .simple-hero{
+        text-align: center;
+        color: $white;
+        background-color: $teal;
+        margin-top: 0 !important;
+    }
+
+    .categories-btn__wrap{
+        text-align: center;
+        margin-bottom: 1.5rem;
+        margin-top: 3rem;
+        
+        ul{
+            display: flex;
+            list-style: none;
+            align-items: center;
+            justify-content: center;
+
+            li{
+                margin-top: 0;
+
+                a{
+                    text-decoration: none;
+                }
+
+                &:before{
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .blog-posts{
+        .event-card{
+            margin-bottom: 3rem;
+        }
+    }
+
+    
+
+    @media (min-width: $laptop){
+
+        .blog-posts{
+            display: flex;
+            justify-content: space-between;
+
+            .event-card{
+                width: calc(33% - 1.5rem); 
+            }
+        }
+    }
+}

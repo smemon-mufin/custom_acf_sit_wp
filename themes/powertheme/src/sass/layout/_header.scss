@@ -1,0 +1,94 @@
+.gheader {
+    z-index: 0;
+    margin: 0;
+    transition: .2s all;
+    background-color: $primary;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &-content {
+        padding: .75rem 1rem;
+        color: $white;
+    }
+
+    &__logo {
+        z-index: 100;
+        max-width: 68px;
+    }
+
+    &.sticky {
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        transition: background .15s ease, box-shadow .15s ease, border-color .15s ease;
+
+        &--scrolled {
+            @include box-shadow;
+            margin: 0;
+            background: $primary;
+
+            // .gheader__logo{
+            //     img{
+            //         height: 50px;
+            //         width: auto;
+            //     }
+            // }
+        }
+    }
+
+    &__right{
+        display: flex;
+        align-items: center;
+        
+        .search-icon{
+            margin-right: 1.5rem;
+
+            svg * {
+                fill: #fff;
+            }
+        }
+
+        .btn{
+            width: 133px;  
+        }
+        .lightbox-content{
+            display: none;
+        }
+    }
+}
+
+@media (max-width: $mobile - 1) {
+    .gheader {
+        &__logo {
+            max-width: 200px;
+        }
+        
+    }
+}
+
+@media (max-width: $laptop - 1) {
+    .gheader {
+
+        &__logo {
+            margin-right: auto;
+
+            svg, img {
+                max-height: 46px;
+                width: auto;
+            }
+        }
+        &__right{
+            padding: 1rem;
+            .search-icon{
+                margin-right: 0;
+            }
+        }
+    }
+}

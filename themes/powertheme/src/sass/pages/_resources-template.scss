@@ -1,0 +1,22 @@
+.resources-template, .case-studies-wrap{
+    header{
+        background-color: $white;
+    }
+    .archive-content{
+        padding-top: 0;
+    }
+    form{
+        margin-top: 1.5rem;
+        display: flex;
+
+        .search-submit{
+            margin-left: 1rem;
+            color: $white;
+            border: 0;
+        }
+    }
+
+    .hero--archive{
+        display: none !important;
+    }
+}

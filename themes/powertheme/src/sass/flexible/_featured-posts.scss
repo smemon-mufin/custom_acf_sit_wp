@@ -1,0 +1,40 @@
+.featured-posts{
+    background-color: $xxlgray;
+
+    &__intro{
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    &__posts{
+
+        .resource-card{ 
+            margin-bottom: 1.5rem;
+        }
+    }
+
+
+    @media (min-width: $laptop){
+        &__intro{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &__posts{
+            display: flex;
+            justify-content: flex-start;
+            align-items: stretch;
+
+            .resource-card{
+                width: calc(33% - 1rem);
+                margin-bottom: 0;
+                margin: 0 1rem;
+
+                &__thumb{
+                    padding-bottom: 100%;
+                }
+            }
+        }
+    }
+}
